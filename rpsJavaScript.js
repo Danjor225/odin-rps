@@ -19,16 +19,36 @@ function getHumanChoice(){
     while(validChoice === false){
          humanChoice = prompt("Enter Rock ('r'), Paper ('p') or Scissors ('s')", againMessage)
         if (humanChoice == 'r' || humanChoice == 'p' || humanChoice == 's'){
-            validChoice = true
+            if(checkHappy()) {
+                validChoice = true
+            } else {
+                validChoice = false
+                againMessage = "Please choose an option you are happy with"
+            }
+            
             
         } else {
             validChoice = false
             againMessage = "Please enter a valid option - r, p or s"
         }
     }
-return humanChoice
+
+   
+
+   return humanChoice
     
+}
+
+function checkHappy(choice){
+
     
+    let happy = prompt("You have chosen " + choice + ". Are you happy with this choice? ", "Y / N")
+
+    if(happy == "Y"){
+        return true
+    } else {
+        return false
+    }
 }
 
 let humanScore = 0
@@ -44,6 +64,9 @@ function playRound(humanChoice, computerChoice)
     winningChoice = "Paper"
     losingChoice = "Rock"
 
+    
+
+     
 
     if(win == true){
         winMessage ="You Win!"
