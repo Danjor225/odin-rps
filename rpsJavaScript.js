@@ -2,9 +2,10 @@
 
 let humanScore = 0
 let computerScore = 0
-const rock = ["Rock", "Scissors"] 
-const paper = ["Paper", "Rock"]
-const scissors = ["Scissors", "Paper"]
+
+// Array ordered with the choice and then next is what it wins against
+const rules = ["Rock", "Scissors", "Paper", "Rock", "Scissors", "Paper"] 
+
 
 
 
@@ -95,9 +96,19 @@ function playRound(humanChoice, computerChoice)
     if(humanChoice == computerChoice){
         draw = true
 
-    }
+    } else{
 
-     
+        // code to call a check state and return what pairing is followed by result
+        // first return index number of player choice
+        let indexNumber = getChoiceInIndex(humanChoice)
+        // check computer choice against index number + 1
+        if(computerChoice == rules[indexNumber]){
+            win = true
+        } else {
+            win = false
+        }
+
+    }
 
     if(draw == true){
         winMessage = "You Draw"
@@ -113,3 +124,29 @@ function playRound(humanChoice, computerChoice)
     return winMessage + " " + winningChoice + drawOrBeats + losingChoice
 
 }
+
+
+// find out what choice is in terms of array index location
+function getChoiceInIndex(choice){
+
+    let foundChoice
+    let indexCounter = 0
+
+    while (foundChoice = false)
+    {
+
+        if(choice = rules[indexCounter]){
+            foundChoice = true
+        } else
+        {
+            indexCounter += 2
+        }
+
+
+    }
+
+    return indexCounter
+
+}
+
+console.log(playRound('r', 'Paper'))
