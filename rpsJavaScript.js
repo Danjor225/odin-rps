@@ -31,4 +31,28 @@ return humanChoice
     
 }
 
-console.log(getHumanChoice())
+let humanScore = 0
+let computerScore = 0
+
+
+
+function playRound(humanChoice, computerChoice)
+{
+
+    let win = true
+    winMessage = "You Win"
+    winningChoice = "Paper"
+    losingChoice = "Rock"
+
+
+    if(win == true){
+        winMessage ="You Win!"
+    } else {
+        winMessage = "You Lose"
+    }
+
+    return winMessage + " " + winningChoice + " beats " + losingChoice
+
+}
+
+console.log(playRound("r", "p"))
