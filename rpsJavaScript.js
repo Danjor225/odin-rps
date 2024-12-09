@@ -135,9 +135,13 @@ function playRound(humanChoice, computerChoice)
 }
 
 
-function displayScore(){
+function displayScore(final){
 
-    let message = "The Player Score is: " + humanScore + ". The Computer Score is: " + computerScore + "."
+    let extraMessage
+    if(final == true){
+        extraMessage = "Final "
+    }
+    let message = "The " + extraMessage + "Player Score is: " + humanScore + ". The " + extraMessage + "Computer Score is: " + computerScore + "."
     return message
 }
 
@@ -164,15 +168,25 @@ function getChoiceInIndex(choice){
 
 }
 
+function displayRound(round, noOfRounds){
+
+    return "The round is " + round + " out of " + noOfRounds
+
+}
+
 // Code to play 5 rounds
 
 function playGame(){
 
     const noOfRounds = 5
     // No Of Rounds Loop
-    for (let i =0; i <= noOfRounds; i++){
+    for (let i =1; i <= noOfRounds; i++){
 
+        displayRound(i, noOfRounds)
+        let humanChoice = getHumanChoice()
+        let computerChoice = getComputerChoice()
 
+        
 
     }
 
