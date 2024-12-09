@@ -1,3 +1,4 @@
+// Randomly generates Rock Paper or Scissors
 function getComputerChoice()
 {
     let randomChoice = Math.random()
@@ -12,6 +13,7 @@ function getComputerChoice()
 
 };
 
+// Prompts user to choose rock paper scissors and check it is a valid input
 function getHumanChoice(){
     let humanChoice
     let againMessage = "r, p or s"
@@ -39,11 +41,12 @@ function getHumanChoice(){
     
 }
 
+// Creates a check if happy prompt to confirm players choice
 function checkHappy(choice){
 
     choice = convertChoice(choice)
     let happy = prompt("You have chosen " + choice + ". Are you happy with this choice? ", "Y / N")
-
+    happy = happy.toUpperCase()
     if(happy == "Y"){
         return true
     } else {
@@ -51,9 +54,8 @@ function checkHappy(choice){
     }
 }
 
-let humanScore = 0
-let computerScore = 0
 
+// Turns the single letter into the word
 function convertChoice(choice){
 
 if(choice == "r"){
@@ -65,14 +67,22 @@ if(choice == "r"){
 }
 
 }
+let humanScore = 0
+let computerScore = 0
+const rock = ["Rock", "Scissors"] 
+const paper = ["Paper", "Rock"]
+const scissors = ["Scissors", "Paper"]
 
+
+// Compares two inputs and works out who wins and increments score
 function playRound(humanChoice, computerChoice)
 {
-
+    humanChoice = convertChoice(humanChoice)
+    // computerChoice = convertChoice(computerChoice)
     let win = true
-    winMessage = "You Win"
-    winningChoice = "Paper"
-    losingChoice = "Rock"
+    let winMessage = "You Win"
+    let winningChoice = "Paper"
+    let losingChoice = "Rock"
 
     
 
@@ -87,5 +97,3 @@ function playRound(humanChoice, computerChoice)
     return winMessage + " " + winningChoice + " beats " + losingChoice
 
 }
-
-console.log(playRound("r", "p"))
