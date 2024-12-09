@@ -137,7 +137,7 @@ function playRound(humanChoice, computerChoice)
 
 function displayScore(final){
 
-    let extraMessage
+    let extraMessage =""
     if(final == true){
         extraMessage = "Final "
     }
@@ -182,10 +182,12 @@ function playGame(){
     // No Of Rounds Loop
     for (let i =1; i <= noOfRounds; i++){
 
-        displayRound(i, noOfRounds)
+        console.log(displayRound(i, noOfRounds))
+        console.log(displayScore(false))
         let humanChoice = getHumanChoice()
         let computerChoice = getComputerChoice()
 
+        console.log(playRound(humanChoice, computerChoice))
         
 
     }
@@ -193,3 +195,4 @@ function playGame(){
 
 
 }
+console.log(playGame())
