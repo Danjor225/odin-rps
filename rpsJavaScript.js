@@ -1,3 +1,13 @@
+// Global Variables
+
+let humanScore = 0
+let computerScore = 0
+const rock = ["Rock", "Scissors"] 
+const paper = ["Paper", "Rock"]
+const scissors = ["Scissors", "Paper"]
+
+
+
 // Randomly generates Rock Paper or Scissors
 function getComputerChoice()
 {
@@ -67,22 +77,18 @@ if(choice == "r"){
 }
 
 }
-let humanScore = 0
-let computerScore = 0
-const rock = ["Rock", "Scissors"] 
-const paper = ["Paper", "Rock"]
-const scissors = ["Scissors", "Paper"]
+
 
 
 // Compares two inputs and works out who wins and increments score
 function playRound(humanChoice, computerChoice)
 {
     humanChoice = convertChoice(humanChoice)
-    // computerChoice = convertChoice(computerChoice)
+    
     let win = true
-    let winMessage = "You Win"
-    let winningChoice = "Paper"
-    let losingChoice = "Rock"
+    let winMessage
+    let winningChoice
+    let losingChoice
 
     
 
