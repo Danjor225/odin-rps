@@ -115,22 +115,31 @@ function playRound(humanChoice, computerChoice)
         drawOrBeats = " draws with "
         winningChoice = humanChoice
         losingChoice = computerChoice
+
     } else if (win == true) {
         winMessage ="You Win!"
         drawOrBeats = " beats "
         winningChoice = humanChoice
         losingChoice = computerChoice
+        humanScore += 1
     } else { 
         winMessage ="You Lose!"
         drawOrBeats = " beats "
         winningChoice = computerChoice
         losingChoice = humanChoice
+        computerScore += 1
     }
 
     return winMessage + " " + winningChoice + drawOrBeats + losingChoice
 
 }
 
+
+function displayScore(){
+
+    let message = "The Player Score is: " + humanScore + ". The Computer Score is: " + computerScore + "."
+    return message
+}
 
 // find out what choice is in terms of array index location
 function getChoiceInIndex(choice){
@@ -155,4 +164,3 @@ function getChoiceInIndex(choice){
 
 }
 
-console.log(playRound('r', 'Paper'))
