@@ -86,20 +86,30 @@ function playRound(humanChoice, computerChoice)
     humanChoice = convertChoice(humanChoice)
     
     let win = true
-    let winMessage
-    let winningChoice
-    let losingChoice
+    let winMessage = "You Win"
+    let winningChoice = "Rock"
+    let losingChoice = "Rock"
+    let drawOrBeats = "You Draw"
+    let draw = false
 
-    
+    if(humanChoice == computerChoice){
+        draw = true
+
+    }
 
      
 
-    if(win == true){
+    if(draw == true){
+        winMessage = "You Draw"
+        drawOrBeats = " draws "
+    } else if (win == true) {
         winMessage ="You Win!"
-    } else {
-        winMessage = "You Lose"
+        drawOrBeats = " beats "
+    } else { 
+        winMessage ="You Lose!"
+        drawOrBeats = " beats "
     }
 
-    return winMessage + " " + winningChoice + " beats " + losingChoice
+    return winMessage + " " + winningChoice + drawOrBeats + losingChoice
 
 }
