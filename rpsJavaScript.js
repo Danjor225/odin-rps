@@ -13,13 +13,21 @@ function getComputerChoice()
 };
 
 function getHumanChoice(){
-    let humanChoice = prompt("Enter Rock ('r'), Paper ('p') or Scissors ('s')", "r, p or s")
-
-    if (humanChoice != "r" || "p" || "s"){
-        return "Please enter a correct option"
-    } else {
-        return humanChoice
+    let humanChoice
+    let againMessage = "r, p or s"
+    let validChoice = false
+    while(validChoice === false){
+         humanChoice = prompt("Enter Rock ('r'), Paper ('p') or Scissors ('s')", againMessage)
+        if (humanChoice == 'r' || humanChoice == 'p' || humanChoice == 's'){
+            validChoice = true
+            
+        } else {
+            validChoice = false
+            againMessage = "Please enter a valid option - r, p or s"
+        }
     }
+return humanChoice
+    
     
 }
 
