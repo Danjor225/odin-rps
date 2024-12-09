@@ -112,13 +112,19 @@ function playRound(humanChoice, computerChoice)
 
     if(draw == true){
         winMessage = "You Draw"
-        drawOrBeats = " draws "
+        drawOrBeats = " draws with "
+        winningChoice = humanChoice
+        losingChoice = computerChoice
     } else if (win == true) {
         winMessage ="You Win!"
         drawOrBeats = " beats "
+        winningChoice = humanChoice
+        losingChoice = computerChoice
     } else { 
         winMessage ="You Lose!"
         drawOrBeats = " beats "
+        winningChoice = computerChoice
+        losingChoice = humanChoice
     }
 
     return winMessage + " " + winningChoice + drawOrBeats + losingChoice
