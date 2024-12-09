@@ -41,7 +41,7 @@ function getHumanChoice(){
 
 function checkHappy(choice){
 
-    
+    choice = convertChoice(choice)
     let happy = prompt("You have chosen " + choice + ". Are you happy with this choice? ", "Y / N")
 
     if(happy == "Y"){
@@ -54,7 +54,17 @@ function checkHappy(choice){
 let humanScore = 0
 let computerScore = 0
 
+function convertChoice(choice){
 
+if(choice == "r"){
+    return "Rock"
+} else if (choice == "s"){
+    return "Scissors"
+} else {
+    return "Rock"
+}
+
+}
 
 function playRound(humanChoice, computerChoice)
 {
