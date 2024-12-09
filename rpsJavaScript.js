@@ -12,3 +12,15 @@ function getComputerChoice()
 
 };
 
+function getHumanChoice(){
+    let humanChoice = prompt("Enter Rock ('r'), Paper ('p') or Scissors ('s')", "r, p or s")
+
+    if (humanChoice != "r" || "p" || "s"){
+        return "Please enter a correct option"
+    } else {
+        return humanChoice
+    }
+    
+}
+
+console.log(getHumanChoice())
