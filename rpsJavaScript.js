@@ -164,3 +164,18 @@ function getChoiceInIndex(choice){
 
 }
 
+// Code to play 5 rounds
+
+function playGame(){
+
+    const noOfRounds = 5
+    // No Of Rounds Loop
+    for (let i =0; i <= noOfRounds; i++){
+
+
+
+    }
+
+
+
+}
