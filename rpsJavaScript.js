@@ -32,7 +32,7 @@ function getHumanChoice(){
     while(validChoice === false){
          humanChoice = prompt("Enter Rock ('r'), Paper ('p') or Scissors ('s')", againMessage)
         if (humanChoice == 'r' || humanChoice == 'p' || humanChoice == 's'){
-            if(checkHappy()) {
+            if(checkHappy(humanChoice)) {
                 validChoice = true
             } else {
                 validChoice = false
@@ -192,7 +192,7 @@ function playGame(){
 
     }
 
-    console.log(displayScore(true))
+    return displayScore(true)
 
 
 }
