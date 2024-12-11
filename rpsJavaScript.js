@@ -196,4 +196,11 @@ function playGame(){
 
 
 }
+
+function displayChoices(humanChoice, computerChoice){
+
+    return "You have chosen " + humanChoice + " and the computer has chosen " + computerChoice + "."
+
+}
+
 console.log(playGame())
