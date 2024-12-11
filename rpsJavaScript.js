@@ -192,6 +192,7 @@ function playGame(){
 
     }
 
+    console.log(displayScore(true))
 
 
 }
