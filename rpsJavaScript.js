@@ -148,13 +148,13 @@ function displayScore(final){
 // find out what choice is in terms of array index location
 function getChoiceInIndex(choice){
 
-    let foundChoice
+    let foundChoice = false
     let indexCounter = 0
 
-    while (foundChoice = false)
+    while (foundChoice == false)
     {
 
-        if(choice = rules[indexCounter]){
+        if(choice == rules[indexCounter]){
             foundChoice = true
         } else
         {
