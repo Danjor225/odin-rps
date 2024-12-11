@@ -102,7 +102,7 @@ function playRound(humanChoice, computerChoice)
         // first return index number of player choice
         let indexNumber = getChoiceInIndex(humanChoice)
         // check computer choice against index number + 1
-        if(computerChoice == rules[indexNumber]){
+        if(computerChoice == rules[indexNumber+1]){
             win = true
         } else {
             win = false
