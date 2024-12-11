@@ -74,7 +74,7 @@ if(choice == "r"){
 } else if (choice == "s"){
     return "Scissors"
 } else {
-    return "Rock"
+    return "Paper"
 }
 
 }
