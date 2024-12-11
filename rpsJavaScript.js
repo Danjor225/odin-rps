@@ -112,7 +112,7 @@ function playRound(humanChoice, computerChoice)
 
     console.log(displayChoices(humanChoice, computerChoice))
     if(draw == true){
-        winMessage = "You Draw"
+        winMessage = "You Draw!"
         drawOrBeats = " draws with "
         winningChoice = humanChoice
         losingChoice = computerChoice
