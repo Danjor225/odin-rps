@@ -87,7 +87,7 @@ if(choice == "r"){
 // Compares two inputs and works out who wins and increments score
 function playRound(humanChoice, computerChoice)
 {
-    humanChoice = convertChoice(humanChoice)
+    //humanChoice = convertChoice(humanChoice)
     
     let win = true
     let winMessage = "You Win"
@@ -188,7 +188,10 @@ function displayChoices(humanChoice, computerChoice){
 
 }
 
-const selection = document.querySelector('.selection')
-selection.addEventListener('click', (choice) => {
-    playRound(choice, getComputerChoice())
+
+const selection = document.querySelector(".selections")
+
+selection.addEventListener("click", (event) => {
+    playRound(event.target.innerText, getComputerChoice())
 })
+
