@@ -1,4 +1,4 @@
-// Project Complete
+
 
 
 // Global Variables
@@ -188,4 +188,7 @@ function displayChoices(humanChoice, computerChoice){
 
 }
 
-console.log(playGame())
+const selection = document.querySelector('.selection')
+selection.addEventListener('click', (choice) => {
+    playRound(choice, getComputerChoice())
+})
