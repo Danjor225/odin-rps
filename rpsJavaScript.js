@@ -178,29 +178,9 @@ function displayRound(round, noOfRounds){
 
 }
 
-// Code to play 5 rounds
-
-function playGame(){
-
-    const noOfRounds = 5
-    // No Of Rounds Loop
-    for (let i =1; i <= noOfRounds; i++){
-
-        console.log(displayRound(i, noOfRounds))
-        console.log(displayScore(false))
-        let humanChoice = getHumanChoice()
-        let computerChoice = getComputerChoice()
-
-        console.clear()
-        console.log(playRound(humanChoice, computerChoice))
-        
-
-    }
-
-    return displayScore(true)
 
 
-}
+
 
 function displayChoices(humanChoice, computerChoice){
 
