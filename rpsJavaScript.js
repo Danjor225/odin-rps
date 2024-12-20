@@ -113,7 +113,7 @@ function playRound(humanChoice, computerChoice)
 
     }
 
-    resultDisplay.innerText = displayChoices(humanChoice, computerChoice)
+    
     if(draw == true){
         winMessage = "You Draw!"
         drawOrBeats = " draws with "
@@ -134,7 +134,7 @@ function playRound(humanChoice, computerChoice)
         computerScore += 1
     }
 
-    return winMessage + " " + winningChoice + drawOrBeats + losingChoice
+    return displayChoices(humanChoice, computerChoice) + '\n' + winMessage + " " + winningChoice + drawOrBeats + losingChoice
 
 }
 
