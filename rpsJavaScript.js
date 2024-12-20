@@ -113,7 +113,7 @@ function playRound(humanChoice, computerChoice)
 
     }
 
-    console.log(displayChoices(humanChoice, computerChoice))
+    resultDisplay.innerText = displayChoices(humanChoice, computerChoice)
     if(draw == true){
         winMessage = "You Draw!"
         drawOrBeats = " draws with "
@@ -192,6 +192,7 @@ function displayChoices(humanChoice, computerChoice){
 const selection = document.querySelector(".selections")
 
 selection.addEventListener("click", (event) => {
-    playRound(event.target.innerText, getComputerChoice())
+   resultDisplay.innerText = playRound(event.target.innerText, getComputerChoice())
 })
 
+const resultDisplay = document.querySelector(".resultDisplay")
