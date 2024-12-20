@@ -143,7 +143,7 @@ function displayScore(final){
 
     
     if(final === true){
-       return checkWinner() + "is the Winner!"
+       return checkWinner() + " the Winner!"
     } else {
         return  "The " + "Player Score is: " + humanScore + ". The " + "Computer Score is: " + computerScore + "."
     } 
