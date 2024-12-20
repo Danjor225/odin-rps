@@ -141,12 +141,13 @@ function playRound(humanChoice, computerChoice)
 
 function displayScore(final){
 
-    let extraMessage =""
-    if(final == true){
-        extraMessage = "Final "
-    }
-    let message = "The " + extraMessage + "Player Score is: " + humanScore + ". The " + extraMessage + "Computer Score is: " + computerScore + "."
-    return message
+    
+    if(final === true){
+       return checkWinner() + "is the Winner!"
+    } else {
+        return  "The " + "Player Score is: " + humanScore + ". The " + "Computer Score is: " + computerScore + "."
+    } 
+    
 }
 
 // find out what choice is in terms of array index location
@@ -172,7 +173,7 @@ function getChoiceInIndex(choice){
 
 }
 
-function displayRound(round, noOfRounds){
+function displayRound(){
 
     return "The round is " + round + " out of " + noOfRounds
 
@@ -190,25 +191,32 @@ function displayChoices(humanChoice, computerChoice){
 
 
 const selection = document.querySelector(".selections")
-let round = 1
-let noOfRounds = 5
+let maximumScore = 5
+let winner
 
 
 
 selection.addEventListener("click", (event) => {
-    resultDisplay.innerText = displayRound()
-   resultDisplay.innerText += "\n" + playRound(event.target.innerText, getComputerChoice())
-   resultDisplay.innerText += "\n" + displayScore(isFinalRound())
+
+   resultDisplay.innerText =  playRound(event.target.innerText, getComputerChoice())
+   resultDisplay.innerText += "\n" + displayScore(isPlayerWon())
 })
 
-function isFinalRound(){
-    if (round === noOfRounds){
+function checkWinner(){
+    if(humanScore === maximumScore){
+        return "You are "
+    } else {
+        return "The Computer is "
+    }
+}
+function isPlayerWon(){
+    if (humanScore === maximumScore || computerScore === maximumScore){
         return true
     } else {
-        round += 1
+        
         return false
     }
 }
 
 const resultDisplay = document.querySelector(".resultDisplay")
-resultDisplay.innerText = displayRound(roundCounter, noOfRounds)
+
