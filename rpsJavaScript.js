@@ -193,6 +193,7 @@ const selection = document.querySelector(".selections")
 
 selection.addEventListener("click", (event) => {
    resultDisplay.innerText = playRound(event.target.innerText, getComputerChoice())
+   resultDisplay.innerText += "\n" + displayScore()
 })
 
 const resultDisplay = document.querySelector(".resultDisplay")
