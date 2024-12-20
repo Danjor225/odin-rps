@@ -190,10 +190,25 @@ function displayChoices(humanChoice, computerChoice){
 
 
 const selection = document.querySelector(".selections")
+let round = 1
+let noOfRounds = 5
+
+
 
 selection.addEventListener("click", (event) => {
-   resultDisplay.innerText = playRound(event.target.innerText, getComputerChoice())
-   resultDisplay.innerText += "\n" + displayScore()
+    resultDisplay.innerText = displayRound()
+   resultDisplay.innerText += "\n" + playRound(event.target.innerText, getComputerChoice())
+   resultDisplay.innerText += "\n" + displayScore(isFinalRound())
 })
 
+function isFinalRound(){
+    if (round === noOfRounds){
+        return true
+    } else {
+        round += 1
+        return false
+    }
+}
+
 const resultDisplay = document.querySelector(".resultDisplay")
+resultDisplay.innerText = displayRound(roundCounter, noOfRounds)
